@@ -50,6 +50,7 @@ public class Servlet extends HttpServlet {
                + task.getComplete() + "</li>");
       }
       out.println("</ul>");
+      out.println("<a href=/TechExercise/insertPage.html>New Task</a> <br>");
       out.println("</body></html>");
    }
 
