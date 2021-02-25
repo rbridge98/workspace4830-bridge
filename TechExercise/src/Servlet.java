@@ -21,7 +21,11 @@ public class Servlet extends HttpServlet {
 
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       response.setContentType("text/html");
-      
+      if (request.getParameter("title") != null)
+      {
+          UtilDB.createTasks(request.getParameter("title"), request.getParameter("dueDate"), 
+        		  request.getParameter("notes"), request.getParameter("complete"));
+      }
       retrieveDisplayData(response.getWriter());
    }
 

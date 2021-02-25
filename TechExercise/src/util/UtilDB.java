@@ -86,7 +86,7 @@ public class UtilDB {
       Transaction tx = null;
       try {
          tx = session.beginTransaction();
-         session.save(new Task(title, Date.valueOf(dueDate), notes, Boolean.valueOf(complete)));
+         session.save(new Task(title, Date.valueOf(dueDate), notes, processComplete(complete)));
          tx.commit();
       } catch (HibernateException e) {
          if (tx != null)
@@ -95,5 +95,14 @@ public class UtilDB {
       } finally {
          session.close();
       }
+   }
+   
+   private static boolean processComplete(String completeIn)
+   {
+	   if (completeIn.equals("Y") || completeIn.equals("y"))
+	   {
+		   return true;
+	   }
+	   return false;
    }
 }
