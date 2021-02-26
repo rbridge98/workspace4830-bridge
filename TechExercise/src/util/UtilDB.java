@@ -97,12 +97,12 @@ public class UtilDB {
       }
    }
    
-   private static boolean processComplete(String completeIn)
+   private static int processComplete(String completeIn)
    {
 	   if (completeIn.equals("Y") || completeIn.equals("y"))
 	   {
-		   return true;
+		   return 1;
 	   }
-	   return false;
+	   return 0;
    }
 }

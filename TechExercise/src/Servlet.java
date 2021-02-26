@@ -41,17 +41,11 @@ public class Servlet extends HttpServlet {
       out.println("<ul>");
       List<Task> listTasks = UtilDB.listTasks();
       for (Task task : listTasks) {
-         System.out.println("[DBG] " + task.getId() + ", " //
-               + task.getTitle() + ", " //
-               + task.getDueDate() + ", "
-               + task.getNotes() + ", "
-               + task.getComplete());
-
-         out.println("<li>" + task.getId() + ", " //
-               + task.getTitle() + ", " //
-               + task.getDueDate() + ", "
-               + task.getNotes() + ", "
-               + task.getComplete() + "</li>");
+         out.println("<li>" +
+               "[TITLE] " + task.getTitle()
+               + " [DUE DATE] " + task.getDueDate()
+               + " [NOTES] " + task.getNotes()
+               + " [COMPLETE] " + task.getComplete() + "</li>");
       }
       out.println("</ul>");
       out.println("<a href=/TechExercise/insertPage.html>New Task</a> <br>");
